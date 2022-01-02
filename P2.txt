@@ -1,0 +1,21 @@
+// POTD Dtae : 2/1/22
+
+// Problem 2 : A guy with a mental problem
+
+long long minTime(long long a[], long long b[], long long n)
+    {
+        // Your code goes here  
+        long long s1 =0, s2=0, i ;
+        for(i=0;i<n;i=i+2)      // a -> V
+            s1+=a[i] ;
+        for(i=1;i<n;i=i+2)
+            s1+=b[i] ;
+        for(i=0;i<n;i=i+2)      // b -> v
+            s2+=b[i] ;
+        for(i=1;i<n;i=i+2)
+            s2+=a[i] ;
+        if(s1<s2)
+            return s1;
+        else 
+            return s2 ;
+    }
