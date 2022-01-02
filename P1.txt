@@ -1,0 +1,26 @@
+// POTD Date : 1/1/22
+
+// Problem 1 : Rotate Array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int t,n,d, i,j  ;
+	cin >> t ;
+	while(t--){
+	    cin >> n >> d ;
+	    int *arr = new int[n] ;
+	//    cout << endl ;
+	    for(i=n-d;i<n;++i)
+	        cin >> arr[i] ;
+	    for(i=0;i<n-d;++i)
+	        cin >> arr[i] ;
+	   for(i=0;i<n;++i)
+	     cout<< arr[i] << " " ;
+	   cout << endl ;
+	   delete[] arr ;
+	}
+	return 0;
+}
