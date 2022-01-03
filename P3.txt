@@ -1,0 +1,25 @@
+// POTD Date: 3/1/22
+// Problem 3 : Sort an array of 0s, 1s and 2s 
+
+void sort012(int a[], int n)
+    {
+        // coode here 
+     //   sort(a,a+n) ; // Not using library function
+        int z=0, one=0, t=0, i ;
+        for(i=0;i<n;++i){
+            if(a[i]==0)
+                ++z ;
+            else if(a[i]==1)
+                ++one ;
+            else
+                ++t ;
+        }
+        for(i=0;i<z;++i)
+            a[i] = 0 ;
+        z += one ;
+        for( ;i<z;++i)
+            a[i] = 1 ;
+        z += t ;
+        for( ;i<z;++i)
+            a[i] = 2 ;
+    }
