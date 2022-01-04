@@ -1,0 +1,15 @@
+// POTD Date : 4/1/22
+
+// Problem : Gone bananas
+// Platform : HackerEarth
+
+string solve (int N) {
+   // Your code goes here
+   if( N < 4)
+    return "No" ;
+    int i, sq = sqrt(N) ;
+   for(i=2;i<=sq;++i)
+        if(N%i==0)
+            return "Yes" ;
+   return "No" ;
+}
