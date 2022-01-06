@@ -1,0 +1,39 @@
+// POTD Date: 5/1/22
+// Problem Title : Subtraction Game 1
+// Platform : CodeChef
+
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b){
+    if(b == 0)
+        return a;
+    return gcd(b , a % b) ;
+}
+
+int gcdbase(int *list, int n){
+   int i, tmp = list[0] ;
+   if(n==1)
+    return 1 ;
+   for(i=1;i<n;++i){
+	   tmp =  gcd(list[i],tmp) ;
+	   if(tmp == 1)
+	     break ;
+   }
+    return tmp ;
+}
+int main() {
+	// your code goes here
+	int t,n, i,tmp ;
+	cin >> t ;
+	while(t--){
+	    cin >> n ;
+	    int *arr = new int[n] ;
+	    for(i=0;i<n;++i)
+	        cin >> arr[i] ;
+	//   tmp = gcdbase(arr,n) ;
+	   cout << gcdbase(arr,n) << endl ;
+	   delete[] arr ;
+	}
+	return 0;
+}
