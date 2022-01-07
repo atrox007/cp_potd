@@ -1,0 +1,22 @@
+// POTD Date: 7/1/22
+// Problem Title : Palindrome Number
+// Platform : LeetCode
+
+bool isPalindrome(int x) {
+        long long int k=0, num =x ;
+        int digits ;
+        if(x<0)
+                return false ;
+        if(x==0)
+            return true ;
+        digits = log10(x)  ;
+        while(num){
+            k += ( num%10 * pow(10,digits) ) ;
+            --digits ;
+            num /= 10 ;
+        }
+        if(k==x)
+            return true ;
+        else
+            return false ;
+    }
