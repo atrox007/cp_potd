@@ -1,0 +1,18 @@
+// POTD Date: 10/1/22
+// Problem Title : Substrings of Size Three with Distinct Characters
+// Platform : LeetCode
+
+int countGoodSubstrings(string s) {
+        int i=0,j=2, c=0, len=s.length() ;
+        if(len<3)
+            return 0 ;
+        if(s[i]!=s[i+1] && s[i]!=s[j] && s[i+1]!=s[j])
+        	++c ;
+		++i ; ++j ;
+        while(j<len){
+            if(s[i]!=s[i+1] && s[i]!=s[j] && s[i+1]!=s[j])
+        		++c ;
+            ++i ; ++j ;
+        }
+        return c ;
+    }
