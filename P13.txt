@@ -1,0 +1,19 @@
+// POTD Date: 13/1/22
+// Problem Title : Merge Sorted Array
+// Platform : LeetCode
+
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
+    int k=m+n-1 ; --m ; --n ;
+    if(n<0)
+       return ;
+    for( ; m>=0 && n>=0 ; ){
+        if(nums1[m]>nums2[n])
+            nums1[k--] = nums1[m--];
+        else
+            nums1[k--] = nums2[n--] ;
+    }
+    while(m>=0)
+        nums1[k--] = nums1[m--] ;
+    while(n>=0)
+        nums1[k--] = nums2[n--] ;
+}
