@@ -1,0 +1,20 @@
+// POTD Date: 11/1/22
+// Problem Title : Find Smallest Letter Greater Than Target
+// Platform : LeetCode
+
+char nextGreatestLetter(char* letters, int lettersSize, char target){
+    int l=0, r=lettersSize, m ;
+    if(target=='z' || target>=letters[lettersSize-1])
+        return letters[0] ;
+    while(l<r){
+        m = (l+r)/2 ;
+        if(letters[m]<target)
+            break ;
+        else
+            r=m ;
+    }
+    for( ;m<lettersSize;++m)
+        if(letters[m]>target)
+           break ;
+    return letters[m] ;
+}
