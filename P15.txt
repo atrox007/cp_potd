@@ -1,0 +1,21 @@
+// POTD Date: 15/1/22
+// Problem Title : Find Pair Given Difference
+// Platform : GFG
+
+bool findPair(int arr[], int size, int n){
+    //code
+    sort(arr,arr+size) ;
+    int l=size-2, r=size-1, diff ;		// Using two pointers from last
+    while(l>=0 && r>=0){
+        diff = arr[r]-arr[l] ;
+        if(diff==n)
+            return 1 ;
+        if(diff>n)
+            --r ;
+        else
+            --l ;
+        if(r==0)
+            return 0 ;
+    }
+    return 0 ;
+}
