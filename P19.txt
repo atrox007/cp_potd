@@ -1,0 +1,18 @@
+// POTD Date: 19/1/22
+// Problem Title : Majority Element 
+// Platform : LeetCode
+
+int majorityElement(vector<int>& nums) {	// Boyer Moore Majority Voting algo n/2
+        int c=1, val=nums[0], i ;
+        for(i=1;i<nums.size();++i){
+            if(val==nums[i])
+                ++c ;
+            else
+                --c ;
+            if(c==0){
+                val = nums[i] ;
+                ++c ;
+            }
+        }
+        return val ;
+    }
