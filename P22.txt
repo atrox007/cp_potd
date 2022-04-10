@@ -1,0 +1,13 @@
+// POTD Date: 1/22/22
+// Problem Title : Complement of Base 10 Integer 
+// Platform : LeetCode
+
+int bitwiseComplement(int n) {
+        if(n==0 || n==1) return n^1 ;
+        int lz = 32 - __builtin_clz(n) ; // bits in number, (clz gives leading zeroes)
+        return n^( (1<<lz)-1) ;  // 2^i - 1 --> all bits set before it
+    }
+/*
+// Find number of bits in the given integer
+   int number_of_bits = floor(log2(n))+1;
+*/
