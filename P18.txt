@@ -1,0 +1,22 @@
+// POTD Date: 18/1/22
+// Problem Title : Equilibrium Point 
+// Platform : GFG
+
+int equilibriumPoint(long long a[], int n) {
+    
+        // Your code here
+        long long sum=0, lsum=0,rsum=0 ;	// T = O(2n) actually
+        int i ;
+        if(n==1)
+            return 1 ;
+        for(i=0;i<n;++i){ // Finding all sum, then traverse from i=1 and cal lsum then rsum=sum-lsum-pos
+            sum += a[i] ;
+        }
+        for(i=1;i<n;++i){
+            lsum+=a[i-1] ;
+            rsum = sum - (lsum+a[i]) ;
+            if(lsum == rsum)
+                return i+1 ;
+        }
+        return -1 ;
+    }
