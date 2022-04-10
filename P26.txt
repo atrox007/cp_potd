@@ -1,0 +1,26 @@
+// POTD Date: 1/26/22
+// Problem Title : Long Pressed Name
+// Platform : LeetCode
+
+bool isLongPressedName(string name, string typed) {
+        int i=0,j=0 ;
+        if(name[0]!=typed[0]) return false ;
+        for(;i<typed.size();++i){
+            if(typed[i]==name[j]){
+                if(j+1<name.size() && i+1<typed.size() && name[j+1]==typed[i+1])
+                    ++j ;
+            }
+            else if(typed[i]!=name[j]){
+                ++j ;
+                if(j==name.size() || typed[i]!=name[j])
+                    return false ;
+                if(j+1<name.size() && i+1<typed.size() && name[j+1]==typed[i+1])
+                    ++j ;
+            }
+        }
+        if(j<name.size()-1) return false ;
+        return true ;
+}
+/*
+Another approach, could create 2d array arr[2][] for both string to store character and its count below and loop it with two pointers to check
+*/
