@@ -1,0 +1,26 @@
+// POTD Date: 20/1/22
+// Problem Title : Sort Integers by The Number of 1 Bits 
+// Platform : LeetCode
+
+vector<int> sortByBits(vector<int>& arr) {
+        vector<int> v1 ;
+        int i,j, tmp1,tmp2 ;
+        for(i=0;i<arr.size();++i){
+            v1.push_back(__builtin_popcount(arr[i])) ;
+        }
+        for(i=0;i<arr.size()-1;++i){
+            for(j=i+1;j<arr.size();++j){
+                if(v1[i]>v1[j]){
+                    tmp1 = v1[i] ; tmp2 = arr[i] ;
+                    v1[i] = v1[j] ; arr[i] = arr[j] ;
+                    v1[j] = tmp1 ; arr[j] = tmp2 ;
+                }
+                else if(v1[i]==v1[j] && arr[i]>arr[j]){
+                    tmp2 = arr[i] ;
+                    arr[i] = arr[j] ;
+                    arr[j] = tmp2 ;
+                }
+            }
+        }
+        return arr ;
+    }
