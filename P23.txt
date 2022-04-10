@@ -1,0 +1,14 @@
+// POTD Date: 1/23/22
+// Problem Title : Final Value of Variable After Performing Operations 
+// Platform : LeetCode
+
+int finalValueAfterOperations(vector<string>& operations) {
+        int i,x=0 ;
+        for(i=0;i<operations.size();++i){
+            if(operations[i][0] == '+' || operations[i][2] == '+')
+                ++x ;
+            else
+                --x ;
+        }
+        return x ;
+    }
