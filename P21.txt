@@ -1,0 +1,23 @@
+// POTD Date: 1/21/22
+// Problem Title : Koko Eating Bananas 
+// Platform : LeetCode
+
+int minEatingSpeed(vector<int>& piles, int h) {
+        int i,j, high=1000000000,low=1 , mid, k=1000000000,tmp=0,pile ;
+        //mid = (high/4)*3 ; start seed
+        while(low<=high){
+            mid = low + (high-low)/2 ;
+            for(i=0;i<piles.size();++i){
+                tmp+=piles[i]/mid  ;
+                if(piles[i]%mid !=0)    ++tmp ;
+            }
+            if(tmp<=h && mid<=k)
+                k=mid ;
+            if((tmp-h) >0 )
+                low = mid+1 ;
+            else if((tmp-h) <=0)
+                high = mid-1 ;
+            tmp = 0 ;
+        }
+        return k ;
+    }
