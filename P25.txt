@@ -1,0 +1,14 @@
+// POTD Date: 1/25/22
+// Problem Title : Length of Last Word
+// Platform : LeetCode
+
+int lengthOfLastWord(string s) {
+        int i=s.size()-1 , l=0 ;
+        for(;i>=0;--i){
+            if(l && s[i]==' ')
+                break ;
+            else if(s[i]!=' ')
+                ++l ;
+        }
+        return l ;
+    }
